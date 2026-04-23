@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Como montar uma reserva de emergência do zero em 6 meses – MentorFinanceiro</title>
+  <meta name="description" content="Guia completo e prático para montar a sua reserva de emergência do zero em 6 meses, independentemente do seu salário."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0a;
+      --dark: #111111;
+      --card: #161616;
+      --border: #222222;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --white: #f5f0e8;
+      --muted: #888;
+      --green: #2d6a4f;
+      --green-light: #52b788;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 4rem;
+      background: rgba(10,10,10,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 700;
+      color: var(--gold); text-decoration: none;
+    }
+    .logo span { color: var(--white); }
+    .nav-back {
+      color: var(--muted); text-decoration: none;
+      font-size: 0.85rem; transition: color 0.2s;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .nav-back:hover { color: var(--gold); }
+
+    /* ARTICLE HERO */
+    .article-hero {
+      padding: 8rem 4rem 4rem;
+      max-width: 800px; margin: 0 auto;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-tag {
+      display: inline-block;
+      border: 1px solid var(--gold); color: var(--gold);
+      font-size: 0.72rem; letter-spacing: 0.15em;
+      text-transform: uppercase; padding: 0.3rem 0.8rem;
+      border-radius: 2px; margin-bottom: 1.5rem;
+    }
+    .article-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900; line-height: 1.1;
+      letter-spacing: -0.02em; margin-bottom: 1.2rem;
+    }
+    .article-hero h1 em { font-style: italic; color: var(--gold); }
+    .article-intro {
+      font-size: 1.1rem; color: #aaa;
+      line-height: 1.8; margin-bottom: 2rem;
+    }
+    .article-meta {
+      display: flex; align-items: center; gap: 1.5rem;
+      font-size: 0.8rem; color: var(--muted);
+      padding-top: 1.5rem; border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .article-meta span { color: var(--gold); }
+
+    /* ARTICLE BODY */
+    .article-body {
+      max-width: 800px; margin: 0 auto;
+      padding: 4rem 4rem;
+    }
+    .article-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; font-weight: 700;
+      margin: 3rem 0 1rem;
+      line-height: 1.2;
+    }
+    .article-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 700;
+      margin: 2rem 0 0.8rem;
+      color: var(--gold-light);
+    }
+    .article-body p {
+      font-size: 1rem; color: #ccc;
+      line-height: 1.9; margin-bottom: 1.4rem;
+    }
+    .article-body strong { color: var(--white); font-weight: 500; }
+
+    /* HIGHLIGHT BOX */
+    .highlight {
+      border-left: 3px solid var(--gold);
+      background: var(--card);
+      padding: 1.5rem 2rem;
+      margin: 2rem 0; border-radius: 0 4px 4px 0;
+    }
+    .highlight p { margin: 0; color: var(--white); font-size: 1rem; }
+
+    /* STEP BOX */
+    .steps { margin: 2rem 0; }
+    .step {
+      display: flex; gap: 1.5rem;
+      margin-bottom: 2rem; align-items: flex-start;
+    }
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem; font-weight: 900;
+      color: var(--gold); line-height: 1;
+      min-width: 48px;
+    }
+    .step-content h3 {
+      margin: 0 0 0.4rem; font-size: 1.1rem;
+      color: var(--white);
+    }
+    .step-content p { margin: 0; font-size: 0.95rem; }
+
+    /* TABLE */
+    .table-wrap { overflow-x: auto; margin: 2rem 0; }
+    table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    th {
+      background: var(--card); color: var(--gold);
+      padding: 0.8rem 1rem; text-align: left;
+      font-weight: 500; letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 0.8rem 1rem; border-bottom: 1px solid var(--border);
+      color: #ccc;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--card); }
+
+    /* NEWSLETTER CTA */
+    .article-cta {
+      background: var(--card); border: 1px solid var(--border);
+      padding: 2.5rem; border-radius: 4px;
+      margin: 3rem 0; text-align: center;
+    }
+    .article-cta h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; font-weight: 700; margin-bottom: 0.6rem;
+    }
+    .article-cta p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .cta-form { display: flex; gap: 0; max-width: 420px; margin: 0 auto; }
+    .cta-form input {
+      flex: 1; background: var(--black);
+      border: 1px solid var(--border); border-right: none;
+      color: var(--white); padding: 0.75rem 1rem;
+      font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+      outline: none; border-radius: 2px 0 0 2px;
+    }
+    .cta-form input::placeholder { color: #555; }
+    .cta-form button {
+      background: var(--gold); color: var(--black);
+      border: none; padding: 0.75rem 1.2rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem; font-weight: 500;
+      cursor: pointer; border-radius: 0 2px 2px 0;
+      white-space: nowrap;
+    }
+
+    /* RELATED */
+    .related {
+      max-width: 800px; margin: 0 auto;
+      padding: 0 4rem 6rem;
+      border-top: 1px solid var(--border);
+      padding-top: 3rem;
+    }
+    .related h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; margin-bottom: 1.5rem;
+    }
+    .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .related-card {
+      background: var(--card); border: 1px solid var(--border);
+      padding: 1.5rem; border-radius: 2px;
+      text-decoration: none; color: inherit;
+      transition: border-color 0.2s;
+      display: block;
+    }
+    .related-card:hover { border-color: var(--gold); }
+    .related-tag { font-size: 0.68rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; display: block; }
+    .related-card h3 { font-size: 0.95rem; font-weight: 500; line-height: 1.4; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark); border-top: 1px solid var(--border);
+      padding: 2rem 4rem; text-align: center;
+    }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--gold); }
+    .footer-logo span { color: var(--white); }
+    .footer-bottom { font-size: 0.75rem; color: #444; margin-top: 0.5rem; }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .article-hero { padding: 7rem 1.5rem 3rem; }
+      .article-body { padding: 3rem 1.5rem; }
+      .related { padding: 2rem 1.5rem 4rem; }
+      .related-grid { grid-template-columns: 1fr; }
+      footer { padding: 2rem 1.5rem; }
+      .cta-form { flex-direction: column; }
+      .cta-form input { border-right: 1px solid var(--border); border-bottom: none; border-radius: 2px 2px 0 0; }
+      .cta-form button { border-radius: 0 0 2px 2px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">Mentor<span>Financeiro</span></a>
+  <a href="index.html" class="nav-back">← Voltar ao início</a>
+</nav>
+
+<!-- ARTICLE HERO -->
+<div class="article-hero">
+  <div class="article-tag">💰 Finanças Pessoais</div>
+  <h1>Como montar uma reserva de emergência do zero <em>em 6 meses</em></h1>
+  <p class="article-intro">A maioria das pessoas adia a reserva de emergência por achar que precisa de um grande valor inicial. Mas a lógica é outra: o que importa é o sistema, não o ponto de partida. Neste guia mostramos o passo a passo para qualquer salário.</p>
+  <div class="article-meta">
+    <span>📅 Publicado em Abril de 2025</span>
+    <span>⏱ 12 min de leitura</span>
+    <span>💰 Finanças Pessoais</span>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-body">
+
+  <h2>O que é uma reserva de emergência e por que ela é a base de tudo</h2>
+
+  <p>A reserva de emergência é um valor guardado exclusivamente para situações imprevistas: perda de emprego, doença, avaria do carro, problema em casa. Ela não é investimento, não é poupança para viagens, não é fundo de aposentadoria. É a sua rede de segurança financeira.</p>
+
+  <p>Sem ela, qualquer imprevisto vira dívida. E dívida com juros altos — como cheque especial ou cartão de crédito — pode destruir anos de esforço financeiro em poucos meses.</p>
+
+  <div class="highlight">
+    <p>💡 <strong>Regra geral:</strong> a reserva de emergência deve cobrir entre 3 e 6 meses das suas despesas mensais. Se gasta R$3.000 por mês, a meta é ter entre R$9.000 e R$18.000 guardados.</p>
+  </div>
+
+  <h2>Por que a maioria das pessoas nunca monta a reserva</h2>
+
+  <p>Existe um erro de pensamento muito comum: achar que só vale a pena começar quando tiver uma quantia significativa para guardar. Isso é um mito que paralisa milhões de pessoas.</p>
+
+  <p>A verdade é que <strong>R$50 guardados hoje valem mais do que R$500 que você planeia guardar no mês que vem</strong>. O hábito de guardar é mais importante do que o valor. O montante cresce com o tempo. O hábito, só cresce se você começar.</p>
+
+  <p>Outro obstáculo comum é não saber onde guardar. Muita gente deixa o dinheiro na conta corrente — onde acaba sendo gasto — ou em investimentos de longo prazo que têm penalização por resgate antecipado.</p>
+
+  <h2>Onde guardar a reserva de emergência</h2>
+
+  <p>O dinheiro da reserva precisa ter três características obrigatórias: <strong>segurança, liquidez e rendimento mínimo</strong>. Ou seja, tem de estar protegido, disponível a qualquer momento e render pelo menos acima da inflação.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Onde guardar</th>
+          <th>Liquidez</th>
+          <th>Segurança</th>
+          <th>Indicado?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Conta corrente</td>
+          <td>✅ Imediata</td>
+          <td>⚠️ Tenta gastar</td>
+          <td>❌ Não</td>
+        </tr>
+        <tr>
+          <td>Poupança</td>
+          <td>✅ Imediata</td>
+          <td>✅ Sim</td>
+          <td>⚠️ Fraco rendimento</td>
+        </tr>
+        <tr>
+          <td>CDB com liquidez diária</td>
+          <td>✅ D+0 ou D+1</td>
+          <td>✅ Coberto pelo FGC</td>
+          <td>✅ Ótimo</td>
+        </tr>
+        <tr>
+          <td>Tesouro Selic</td>
+          <td>✅ D+1</td>
+          <td>✅ Garantia do governo</td>
+          <td>✅ Ótimo</td>
+        </tr>
+        <tr>
+          <td>Fundos de investimento</td>
+          <td>⚠️ Varia</td>
+          <td>⚠️ Depende do fundo</td>
+          <td>❌ Não recomendado</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>A nossa recomendação é o <strong>CDB com liquidez diária</strong> em corretoras como Nubank, Rico ou XP, ou o <strong>Tesouro Selic</strong> pelo Tesouro Direto. Ambos rendem próximo a 100% do CDI e permitem resgatar o dinheiro a qualquer momento.</p>
+
+  <h2>O plano de 6 meses para montar a sua reserva</h2>
+
+  <p>Veja o passo a passo prático, mês a mês, para construir a sua reserva independentemente do seu salário:</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-content">
+        <h3>Calcule quanto precisa guardar</h3>
+        <p>Some todas as suas despesas mensais essenciais: aluguel, alimentação, transporte, contas fixas. Multiplique por 6. Esse é o seu objetivo final.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-content">
+        <h3>Defina quanto vai guardar por mês</h3>
+        <p>Divida o seu objetivo por 6 meses. Se a meta é R$12.000, precisa guardar R$2.000 por mês. Se não consegue, ajuste o prazo para 12 meses e guarde R$1.000.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-content">
+        <h3>Automatize a transferência</h3>
+        <p>No dia do pagamento, configure uma transferência automática para a conta da reserva. O que não entra na conta corrente, não é gasto. Esse é o segredo mais simples e poderoso.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-content">
+        <h3>Corte um gasto desnecessário por mês</h3>
+        <p>Identifique uma assinatura, hábito ou despesa que pode eliminar temporariamente. Streaming que não usa, delivery excessivo, compras por impulso. Redirecione esse valor para a reserva.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">05</div>
+      <div class="step-content">
+        <h3>Não toque no dinheiro</h3>
+        <p>A reserva só existe para emergências reais. Viagem, roupa nova, eletrônico — não são emergências. Defina uma regra clara para si mesmo sobre o que justifica usar a reserva.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">06</div>
+      <div class="step-content">
+        <h3>Celebre cada marco</h3>
+        <p>Ao atingir 1 mês de reserva, celebre. Ao atingir 3 meses, celebre mais. O reforço positivo mantém a motivação nos momentos em que bate a vontade de desistir.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>E se o meu salário for muito baixo?</h2>
+
+  <p>Esta é a dúvida mais comum. A resposta é direta: <strong>comece com o que tem</strong>. R$20, R$50, R$100. Qualquer valor é melhor do que zero.</p>
+
+  <p>Existe um conceito chamado <em>efeito composto dos hábitos</em>: cada vez que você guarda, mesmo que pouco, está a reforçar a identidade de alguém que poupa. Com o tempo, aumenta a capacidade de ganho, reduz despesas e o valor guardado cresce naturalmente.</p>
+
+  <div class="highlight">
+    <p>📊 <strong>Exemplo real:</strong> guardando apenas R$150 por mês durante 6 meses, você terá R$900 — quase um mês de despesas para quem gasta R$1.000/mês. É um começo real e concreto.</p>
+  </div>
+
+  <h2>O que fazer depois de completar a reserva</h2>
+
+  <p>Parabéns — completar a reserva de emergência é um marco enorme. A partir daqui, o caminho financeiro fica mais interessante:</p>
+
+  <p><strong>1. Mantenha a reserva e não a misture com investimentos.</strong> Ela fica separada, intocável, para emergências.</p>
+
+  <p><strong>2. Comece a investir o excedente.</strong> Com a segurança da reserva, pode assumir riscos maiores em investimentos de maior retorno — Tesouro IPCA+, fundos imobiliários, ações.</p>
+
+  <p><strong>3. Revise a reserva anualmente.</strong> Se as suas despesas aumentarem, a reserva também deve crescer. Faça essa revisão todo início de ano.</p>
+
+  <h2>Conclusão</h2>
+
+  <p>Montar uma reserva de emergência não é um sacrifício — é um presente que você dá a si mesmo. É a diferença entre um imprevisto ser um problema temporário ou uma catástrofe financeira.</p>
+
+  <p>O segredo não está em ter muito dinheiro. Está em começar hoje, mesmo que com pouco, e ser consistente todos os meses. Em 6 meses, você vai olhar para trás e agradecer por ter começado.</p>
+
+  <!-- NEWSLETTER CTA -->
+  <div class="article-cta">
+    <h3>Receba mais conteúdo como este</h3>
+    <p>Junte-se a milhares de leitores que recebem dicas de finanças, PME e micro hábitos toda semana.</p>
+    <div class="cta-form">
+      <input type="email" placeholder="o seu melhor email..." />
+      <button>Subscrever grátis</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- RELATED ARTICLES -->
+<div class="related">
+  <h2>Artigos relacionados</h2>
+  <div class="related-grid">
+    <a href="#" class="related-card">
+      <span class="related-tag">💰 Finanças Pessoais</span>
+      <h3>Como fazer um orçamento mensal que realmente funciona</h3>
+    </a>
+    <a href="#" class="related-card">
+      <span class="related-tag">📊 Investimentos</span>
+      <h3>Tesouro Direto para iniciantes: guia completo</h3>
+    </a>
+    <a href="#" class="related-card">
+      <span class="related-tag">🧠 Micro Hábitos</span>
+      <h3>A regra dos 2 minutos que vai organizar as suas finanças</h3>
+    </a>
+    <a href="#" class="related-card">
+      <span class="related-tag">🏢 PME</span>
+      <h3>5 erros de fluxo de caixa que afundam pequenas empresas</h3>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Mentor<span>Financeiro</span></div>
+  <div class="footer-bottom">© 2025 MentorFinanceiro · Conteúdo informativo, não constitui aconselhamento financeiro.</div>
+</footer>
+
+</body>
+</html>
